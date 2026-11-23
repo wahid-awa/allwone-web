@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 export const SQUARES = [
-  { id: 0, role: 'organizer', label: { fr: 'Organisateur', en: 'Organizer' }, color: '#d03736', x: 1346,    y: 810.04, w: 24.96, h: 24.96 },
-  { id: 1, role: 'promoter',  label: { fr: 'Promoteur',    en: 'Promoter' },  color: '#e58440', x: 1383.44, y: 810.04, w: 24.96, h: 24.96 },
-  { id: 2, role: 'producer',  label: { fr: 'Producteur',   en: 'Producer' },  color: '#f5da58', x: 1420.19, y: 810.04, w: 24.96, h: 24.96 },
-  { id: 3, role: 'dj',        label: { fr: 'DJ / Artiste', en: 'DJ / Artist' }, color: '#479558', x: 1456.24, y: 810.04, w: 24.96, h: 24.96 },
-  { id: 4, role: 'audience',  label: { fr: 'Public',       en: 'Audience' },  color: '#1a6fa3', x: 1492.99, y: 810.04, w: 24.96, h: 24.96 },
-  { id: 5, role: 'other',     label: { fr: 'Autre',        en: 'Other' },     color: '#6f3877', x: 1529.04, y: 810.04, w: 24.96, h: 24.96 },
+  { id: 0, role: 'organizer', label: { fr: 'Organisateur',  en: 'Organizer' },    color: '#d03736', x: 1346,    y: 810.04, w: 24.96, h: 24.96 },
+  { id: 1, role: 'promoter',  label: { fr: 'Communication', en: 'Promoter' },     color: '#e58440', x: 1383.44, y: 810.04, w: 24.96, h: 24.96 },
+  { id: 2, role: 'producer',  label: { fr: 'Production',    en: 'Producer' },     color: '#f5da58', x: 1420.19, y: 810.04, w: 24.96, h: 24.96 },
+  { id: 3, role: 'dj',        label: { fr: 'DJ / Artiste',  en: 'DJ / Artist' },  color: '#479558', x: 1456.24, y: 810.04, w: 24.96, h: 24.96 },
+  { id: 4, role: 'audience',  label: { fr: 'Passionné',     en: 'Enthusiast' },   color: '#1a6fa3', x: 1492.99, y: 810.04, w: 24.96, h: 24.96 },
+  { id: 5, role: 'other',     label: { fr: 'Autre',         en: 'Other' },        color: '#6f3877', x: 1529.04, y: 810.04, w: 24.96, h: 24.96 },
 ];
 
 interface AnimatedLogoProps {

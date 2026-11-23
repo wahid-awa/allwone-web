@@ -11,6 +11,7 @@ const TEXTS = {
     success: 'Inscrit.',
     duplicate: 'Déjà inscrit.',
     error: 'Erreur.',
+    selectLabel: "Qu'est-ce qui te définit le plus ?",
   },
   en: {
     placeholder: 'your email address',
@@ -18,6 +19,7 @@ const TEXTS = {
     success: 'Registered.',
     duplicate: 'Already registered.',
     error: 'Error.',
+    selectLabel: 'What defines you the most?',
   },
 };
 
@@ -139,6 +141,22 @@ export function App() {
           />
         </div>
 
+        {/* Question — make the selection clearer */}
+        <p
+          style={{
+            marginBottom: 14,
+            fontSize: 10,
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 500,
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            color: 'rgba(255,255,255,0.5)',
+            textAlign: 'center',
+          }}
+        >
+          {t.selectLabel}
+        </p>
+
         {/* Minimalist Role Selector */}
         <div
           style={{
@@ -158,20 +176,37 @@ export function App() {
                 type="button"
                 onClick={() => setRoleIndex(i)}
                 style={{
+                  position: 'relative',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
                   padding: '4px 0',
                   fontSize: 11,
-                  fontWeight: isSelected ? 700 : 400,
                   fontFamily: "'Montserrat', sans-serif",
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: isSelected ? sq.color : 'rgba(255,255,255,0.3)',
                   borderBottom: isSelected ? `1.5px solid ${sq.color}` : '1.5px solid transparent',
                 }}
               >
-                {sq.label[lang]}
+                {/* Invisible bold sizer: the button always reserves the width of its
+                    bold state, so selecting it can never reflow the row (fixes the
+                    mobile text jump in French, where labels are longest). */}
+                <span aria-hidden="true" style={{ visibility: 'hidden', fontWeight: 700 }}>
+                  {sq.label[lang]}
+                </span>
+                <span
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '4px 0',
+                    fontWeight: isSelected ? 700 : 400,
+                    color: isSelected ? sq.color : 'rgba(255,255,255,0.3)',
+                  }}
+                >
+                  {sq.label[lang]}
+                </span>
               </button>
             );
           })}

@@ -1,0 +1,12 @@
+services:
+  allwone:
+    build: .
+    container_name: allwone
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - allwone_data:/app/data
+
+volumes:
+  allwone_data:

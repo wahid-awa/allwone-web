@@ -1,71 +1,25 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --brand-red: #d03736;
-    --brand-orange: #e58440;
-    --brand-yellow: #f5da58;
-    --brand-green: #479558;
-    --brand-blue: #1a6fa3;
-    --brand-purple: #6f3877;
-    --bg-dark: #08080a;
-    --bg-card: rgba(18, 18, 22, 0.7);
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
 
   body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #08080a;
+    margin: 0;
+    padding: 0;
+    background: #080808;
     color: #f3f4f6;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.16);
+  }
+
+  input, button, select, textarea {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.02em;
   }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #08080a;
-}
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
-}
-
-/* Glow utility classes */
-.glow-spectrum {
-  box-shadow: 0 0 30px -5px rgba(208, 55, 54, 0.25), 0 0 30px -5px rgba(26, 111, 163, 0.25);
-}
-
-.text-gradient-spectrum {
-  background: linear-gradient(90deg, #d03736 0%, #e58440 20%, #f5da58 40%, #479558 60%, #1a6fa3 80%, #6f3877 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.border-gradient-spectrum {
-  border-image: linear-gradient(90deg, #d03736, #e58440, #f5da58, #479558, #1a6fa3, #6f3877) 1;
-}
-
-/* Grid & Glass Backgrounds */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-.glass-panel {
-  background: rgba(16, 16, 22, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
